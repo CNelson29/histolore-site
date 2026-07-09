@@ -9,7 +9,7 @@ const GA_ID   = 'G-5TX067SHH1';
 const ADSENSE_RAW_ID = import.meta.env.PUBLIC_ADSENSE_CLIENT_ID || import.meta.env.PUBLIC_GOOGLE_ADSENSE_CLIENT_ID || '';
 const ADSENSE_PUBLISHER_ID = ADSENSE_RAW_ID.replace(/^ca-/, '');
 const ADSENSE_CLIENT_ID = ADSENSE_PUBLISHER_ID ? `ca-${ADSENSE_PUBLISHER_ID}` : '';
-const siteUrl = 'https://curioushistory.net';
+const siteUrl = 'https://histolore.com';
 const ogImage = image || `${siteUrl}/og-default.png`;
 const canonical = slug ? `${siteUrl}/${slug}/` : siteUrl;
 ---
@@ -28,7 +28,7 @@ const canonical = slug ? `${siteUrl}/${slug}/` : siteUrl;
   <meta property="og:title"       content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image"       content={ogImage} />
-  <meta property="og:site_name"   content="Curious History" />
+  <meta property="og:site_name"   content="Histolore" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content={title} />
   <meta name="twitter:description" content={description} />
@@ -42,17 +42,17 @@ const canonical = slug ? `${siteUrl}/${slug}/` : siteUrl;
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Nunito:wght@400;500;600&display=swap" />
   </noscript>
-  <link rel="alternate" type="application/rss+xml" title="Curious History Feed" href="/rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Histolore Feed" href="/rss.xml" />
   <script>
     (() => {
-      const stored = localStorage.getItem('curioushistory-theme');
+      const stored = localStorage.getItem('histolore-theme');
       document.documentElement.dataset.theme = stored || 'dark';
     })();
   </script>
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Curious History',
+    name: 'Histolore',
     url: siteUrl,
     description: 'Fascinating history explained clearly — events, people and mysteries for the endlessly curious.',
   })} />

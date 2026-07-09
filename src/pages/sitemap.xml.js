@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 
 export async function GET() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
-  const base  = 'https://curioushistory.net';
+  const base  = 'https://histolore.com';
   const urls  = [
     { loc: base, priority: '1.0', freq: 'daily' },
     ...posts.map(p => ({ loc: `${base}/${p.slug}/`, priority: '0.8', freq: 'weekly', lastmod: p.data.date })),

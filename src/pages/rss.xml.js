@@ -5,9 +5,9 @@ export async function GET(context) {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
   posts.sort((a, b) => a.data.date < b.data.date ? 1 : -1);
   return rss({
-    title: 'Curious History — Fascinating Stories From the Past',
+    title: 'Histolore — Fascinating Stories From the Past',
     description: 'Daily history explained clearly: ancient civilizations, wars, mysteries and the people who shaped the world.',
-    site: context.site ?? 'https://curioushistory.net',
+    site: context.site ?? 'https://histolore.com',
     items: posts.map(post => {
       const d = new Date(post.data.date);
       return {

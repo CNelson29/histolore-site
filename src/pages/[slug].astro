@@ -26,7 +26,7 @@ const relatedPosts = allPosts
 const dateFormatted = new Date(data.date).toLocaleDateString('en-US', {
   month: 'long', day: 'numeric', year: 'numeric',
 });
-const canonical = `https://curioushistory.net/${post.slug}/`;
+const canonical = `https://histolore.com/${post.slug}/`;
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -36,16 +36,16 @@ const articleSchema = {
   dateModified: data.date,
   mainEntityOfPage: canonical,
   url: canonical,
-  image: data.image ? `https://curioushistory.net${data.image}` : 'https://curioushistory.net/og-default.png',
+  image: data.image ? `https://histolore.com${data.image}` : 'https://histolore.com/og-default.png',
   author: {
     '@type': 'Organization',
-    name: 'Curious History',
-    url: 'https://curioushistory.net',
+    name: 'Histolore',
+    url: 'https://histolore.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Curious History',
-    url: 'https://curioushistory.net',
+    name: 'Histolore',
+    url: 'https://histolore.com',
   },
 };
 const breadcrumbSchema = {
@@ -56,13 +56,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://curioushistory.net/',
+      item: 'https://histolore.com/',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: data.category,
-      item: `https://curioushistory.net/#${data.category.toLowerCase()}`,
+      item: `https://histolore.com/#${data.category.toLowerCase()}`,
     },
     {
       '@type': 'ListItem',
@@ -81,7 +81,7 @@ const GRAD: Record<string, string> = {
 const grad = GRAD[data.category] ?? GRAD.Rankings;
 ---
 <Base
-  title={`${data.title} | Curious History`}
+  title={`${data.title} | Histolore`}
   description={data.excerpt}
   slug={post.slug}
   type="article"

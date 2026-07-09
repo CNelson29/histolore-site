@@ -14,8 +14,8 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.curioushistory.net" }],
-      "destination": "https://curioushistory.net/$1",
+      "has": [{ "type": "host", "value": "www.histolore.com" }],
+      "destination": "https://histolore.com/$1",
       "permanent": true
     },
     { "source": "/best-action-manhwas-overpowered-mc-2", "destination": "/best-action-manhwas-overpowered-mc", "permanent": true },
