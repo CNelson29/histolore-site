@@ -1,0 +1,22 @@
+[
+{"q":"Which ancient wonder still stands today?","o":["Hanging Gardens of Babylon","Great Pyramid of Giza","Colossus of Rhodes","Lighthouse of Alexandria"],"a":1,"e":"The Great Pyramid of Giza is the only Ancient Wonder of the World still largely intact."},
+{"q":"Who was the first Roman emperor?","o":["Julius Caesar","Nero","Augustus","Constantine"],"a":2,"e":"Augustus (Octavian) became Rome's first emperor in 27 BCE. Julius Caesar was a dictator, not emperor."},
+{"q":"The Black Death peaked in Europe during which century?","o":["12th century","14th century","16th century","18th century"],"a":1,"e":"The Black Death devastated Europe roughly 1347–1351, in the 14th century."},
+{"q":"Which civilization built Machu Picchu?","o":["Aztec","Maya","Inca","Olmec"],"a":2,"e":"Machu Picchu was built by the Inca in the 15th century, high in the Peruvian Andes."},
+{"q":"Who led the Mongol Empire to become the largest contiguous land empire?","o":["Kublai Khan","Genghis Khan","Attila","Tamerlane"],"a":1,"e":"Genghis Khan united the Mongol tribes and began the conquests; his successors expanded it further."},
+{"q":"In which year did World War I begin?","o":["1912","1914","1916","1918"],"a":1,"e":"World War I began in 1914 after the assassination of Archduke Franz Ferdinand."},
+{"q":"The Rosetta Stone helped scholars decipher which script?","o":["Cuneiform","Egyptian hieroglyphs","Linear B","Sanskrit"],"a":1,"e":"The Rosetta Stone's parallel texts let scholars finally decode Egyptian hieroglyphs."},
+{"q":"Which empire was ruled from Constantinople?","o":["Ottoman then Byzantine","Byzantine then Ottoman","Persian","Holy Roman"],"a":1,"e":"Constantinople was the Byzantine capital until 1453, when the Ottomans took the city."},
+{"q":"Who was the last active pharaoh of Egypt?","o":["Nefertiti","Hatshepsut","Cleopatra VII","Ankhesenamun"],"a":2,"e":"Cleopatra VII was the last active ruler of the Ptolemaic Kingdom of Egypt."},
+{"q":"The Renaissance began in which country?","o":["France","England","Italy","Spain"],"a":2,"e":"The Renaissance began in Italy in the 14th century, centered in cities like Florence."},
+{"q":"Which document limited the power of the English king in 1215?","o":["Bill of Rights","Magna Carta","Domesday Book","Act of Union"],"a":1,"e":"The Magna Carta, sealed by King John in 1215, limited royal power and influenced later constitutions."},
+{"q":"The printing press with movable type in Europe is credited to whom?","o":["Leonardo da Vinci","Johannes Gutenberg","Galileo","Copernicus"],"a":1,"e":"Gutenberg introduced the movable-type printing press around 1440, revolutionizing the spread of information."},
+{"q":"Which wall was built to protect against northern invasions in China?","o":["Hadrian's Wall","The Great Wall","Berlin Wall","Wall of Babylon"],"a":1,"e":"The Great Wall of China was built and rebuilt over centuries to defend against northern nomadic groups."},
+{"q":"Who wrote the Communist Manifesto (1848)?","o":["Lenin and Trotsky","Marx and Engels","Stalin","Rousseau"],"a":1,"e":"Karl Marx and Friedrich Engels published The Communist Manifesto in 1848."},
+{"q":"The French Revolution began in which year?","o":["1776","1789","1804","1815"],"a":1,"e":"The French Revolution began in 1789 with events like the storming of the Bastille."},
+{"q":"Which explorer's expedition first circumnavigated the globe?","o":["Columbus","Vasco da Gama","Magellan's expedition","Marco Polo"],"a":2,"e":"Magellan's expedition (1519–1522) completed the first circumnavigation, though Magellan died en route."},
+{"q":"The Cold War was primarily between the USA and which country?","o":["China","Germany","The Soviet Union","Japan"],"a":2,"e":"The Cold War was a decades-long rivalry between the United States and the Soviet Union."},
+{"q":"Which ancient Greek city-state was famous for its warrior culture?","o":["Athens","Sparta","Corinth","Thebes"],"a":1,"e":"Sparta was renowned for its militarized society and disciplined warriors."},
+{"q":"The Titanic sank in which year?","o":["1905","1912","1918","1923"],"a":1,"e":"The RMS Titanic sank in April 1912 after striking an iceberg on its maiden voyage."},
+{"q":"Who was the first person to walk on the Moon?","o":["Buzz Aldrin","Yuri Gagarin","Neil Armstrong","Michael Collins"],"a":2,"e":"Neil Armstrong stepped onto the Moon in July 1969 during the Apollo 11 mission."}
+]

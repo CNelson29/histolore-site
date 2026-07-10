@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Base
+  title="History Quiz — How Much Do You Really Know?"
+  description="Test your history knowledge with 20 questions spanning ancient civilizations, wars, empires and famous figures. Free interactive history quiz."
+>
+  <Header />
+  <main class="flex-1">
+    <section class="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+      <div class="text-center mb-8">
+        <h1 class="font-display font-black text-3xl sm:text-5xl text-brand-white mb-3">
+          How Much <span class="gradient-text-coral">History</span> Do You Know?
+        </h1>
+        <p class="text-brand-dim text-lg">20 questions. No sign-up. Can you beat the average?</p>
+      </div>
+
+      <div id="start" class="text-center">
+        <button id="begin" class="px-8 py-3 rounded-xl bg-brand-coral text-white font-display font-black text-lg hover:bg-orange-400 transition-colors">
+          Start the quiz →
+        </button>
+      </div>
+
+      <div id="game" class="hidden">
+        <div class="flex items-center justify-between text-sm text-brand-dim mb-4">
+          <span id="progress">Question 1</span>
+          <span id="score">Score: 0</span>
+        </div>
+        <div class="rounded-2xl border border-brand-border bg-brand-surface/60 p-6">
+          <h2 id="question" class="font-display font-bold text-xl text-brand-white mb-5"></h2>
+          <div id="options" class="space-y-2"></div>
+          <p id="explain" class="hidden mt-4 text-sm text-brand-dim border-t border-brand-border pt-3"></p>
+          <button id="next" class="hidden mt-4 w-full py-2.5 rounded-lg bg-brand-coral text-white font-bold hover:bg-orange-400 transition-colors">Next →</button>
+        </div>
+      </div>
+
+      <div id="result" class="hidden text-center">
+        <div class="rounded-2xl border border-brand-coral/30 bg-brand-surface p-8">
+          <p class="text-brand-dim mb-1">You scored</p>
+          <p id="final" class="font-display font-black text-5xl text-brand-coral mb-2"></p>
+          <p id="verdict" class="text-brand-white font-bold mb-6"></p>
+          <button id="retry" class="px-6 py-2.5 rounded-lg bg-brand-coral text-white font-bold hover:bg-orange-400 transition-colors">Try again</button>
+          <a href="/" class="block mt-4 text-sm text-brand-coral font-bold">Read more history stories →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script>
+    let Q = [], i = 0, score = 0, answered = false;
+    const $ = id => document.getElementById(id);
+
+    fetch('/quiz-data.json').then(r => r.json()).then(d => { Q = d; });
+
+    function render() {
+      answered = false;
+      const q = Q[i];
+      $('progress').textContent = `Question ${i + 1} of ${Q.length}`;
+      $('score').textContent = `Score: ${score}`;
+      $('question').textContent = q.q;
+      $('explain').classList.add('hidden');
+      $('next').classList.add('hidden');
+      const box = $('options'); box.innerHTML = '';
+      q.o.forEach((opt, idx) => {
+        const b = document.createElement('button');
+        b.className = 'w-full text-left px-4 py-2.5 rounded-lg border border-brand-border text-brand-dim hover:border-brand-coral/50 transition-colors';
+        b.textContent = opt;
+        b.addEventListener('click', () => pick(idx, b));
+        box.appendChild(b);
+      });
+    }
+
+    function pick(idx, btn) {
+      if (answered) return;
+      answered = true;
+      const q = Q[i];
+      const btns = $('options').querySelectorAll('button');
+      btns.forEach((b, k) => {
+        b.classList.remove('text-brand-dim');
+        if (k === q.a) b.classList.add('border-green-500','text-green-400');
+        else if (k === idx) b.classList.add('border-red-500','text-red-400');
+      });
+      if (idx === q.a) { score++; $('score').textContent = `Score: ${score}`; }
+      $('explain').textContent = q.e;
+      $('explain').classList.remove('hidden');
+      $('next').classList.remove('hidden');
+    }
+
+    $('begin').addEventListener('click', () => {
+      $('start').classList.add('hidden'); $('game').classList.remove('hidden'); i = 0; score = 0; render();
+    });
+    $('next').addEventListener('click', () => {
+      i++;
+      if (i < Q.length) render();
+      else finish();
+    });
+    function finish() {
+      $('game').classList.add('hidden'); $('result').classList.remove('hidden');
+      const pct = Math.round(score / Q.length * 100);
+      $('final').textContent = `${score}/${Q.length}`;
+      $('verdict').textContent = pct >= 90 ? 'History master! 🏛️' : pct >= 70 ? 'Impressive knowledge!' : pct >= 50 ? 'Solid effort — keep exploring.' : 'Time to dig into the past!';
+    }
+    $('retry').addEventListener('click', () => {
+      $('result').classList.add('hidden'); $('game').classList.remove('hidden'); i = 0; score = 0; render();
+    });
+  </script>
+</Base>
